@@ -6,23 +6,22 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "User")
 @Getter
 @Setter
 @NoArgsConstructor
-public class UserEntity {
+@Table(name = "product")
+public class ProductEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id_user", nullable = false)
-    private Integer idUser;
+    @Column(name = "id_product",nullable = false)
+    private Integer idProduct;
 
     @Column(nullable = false, length = 30, unique = true)
     private String name;
 
-    @Column(nullable = false, length = 150)
-    private String direction;
+    @Column(nullable = false, columnDefinition = "DECIMAL(6,2)")
+    private Double price;
 
-    @Column(nullable = false, length = 15, unique = true)
-    private String telefono;
-
+    @Column(nullable = false, length = 15)
+    private Integer stock;
 }

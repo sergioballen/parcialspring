@@ -6,15 +6,15 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "User")
 @Getter
 @Setter
 @NoArgsConstructor
-public class UserEntity {
+@Table(name = "customer")
+public class CustomerEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id_user", nullable = false)
-    private Integer idUser;
+    @Column(name = "id_customer",nullable = false)
+    private Integer idCustomer;
 
     @Column(nullable = false, length = 30, unique = true)
     private String name;
@@ -24,5 +24,4 @@ public class UserEntity {
 
     @Column(nullable = false, length = 15, unique = true)
     private String telefono;
-
 }
